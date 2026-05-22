@@ -1,0 +1,38 @@
+[build-system]
+requires = ["setuptools>=64"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "genomi-ancestry-panel"
+version = "1.0.0"
+description = "Reproducible compact 1000 Genomes 30x GRCh38 PCA reference panel for ancestry projection."
+readme = "README.md"
+requires-python = ">=3.10"
+license = "MIT"
+authors = [{ name = "genomi maintainers" }]
+keywords = ["genomics", "ancestry", "1000-genomes", "pca", "reference-panel"]
+classifiers = [
+  "Intended Audience :: Science/Research",
+  "Programming Language :: Python :: 3",
+  "Topic :: Scientific/Engineering :: Bio-Informatics",
+]
+dependencies = [
+  "numpy>=1.26",
+]
+
+[project.optional-dependencies]
+dev = ["pytest>=8"]
+
+[project.urls]
+Homepage = "https://github.com/exon-research/genomi-ancestry-panel"
+Source = "https://github.com/exon-research/genomi-ancestry-panel"
+Releases = "https://github.com/exon-research/genomi-ancestry-panel/releases"
+
+[project.scripts]
+genomi-ancestry-panel = "genomi_ancestry_panel.cli:main"
+
+[tool.setuptools.packages.find]
+where = ["src"]
+
+[tool.pytest.ini_options]
+testpaths = ["tests"]
